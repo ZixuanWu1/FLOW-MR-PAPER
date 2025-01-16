@@ -4,10 +4,12 @@ library(ggforce)
 
 bodysize3 = read.csv("k=3_real_bodysize.csv")
 bodysize3$threshold <- factor(bodysize3$threshold, levels = c(1e-8, 1e-6, 1e-4, 1e-2))
-
+bodysize3$exposure[bodysize3$exposure =="Childhood Body Size"] = "early-life Body Size"
+bodysize3$exposure = factor(bodysize3$exposure, levels = c("early-life Body Size", "Adult BMI"))
 
 bmi3 = read.csv("k=3_real_bmi.csv")
 bmi3$threshold <- factor(bmi3$threshold, levels = c(1e-8, 1e-6, 1e-4, 1e-2))
+bmi3$exposure[bmi3$exposure =="Childhood BMI"] = "8-year-old BMI"
 
 bmi4 = read.csv("k=4_real.csv")
 bmi4$threshold <- factor(bmi4$threshold, levels = c(1e-8, 1e-6, 1e-4, 1e-2))
@@ -38,11 +40,11 @@ plot_mv <-function(table, ylimit  = NA, methods = c("MVMR-IVW",
                  position=position_dodge(.9), show.legend = FALSE) +
       geom_errorbar(aes(ymin=lower, ymax=upper, color = factor(exposure)), width=.2,
                     position=position_dodge(.9))  + theme_bw() +
-      labs( x =  "Threshold", y = expression(hat(beta)),
+      labs( x =  "p-value Threshold", y = expression(hat(beta)),
             title = mmm[i] ) + geom_hline(yintercept=0,linetype=2)+scale_x_discrete(labels= c(1e-8,                                                                                           1e-6,
                                                                                               1e-4,
                                                                                               1e-2)) +
-      theme(axis.text.x = element_text(angle = 45, hjust = 0.5, vjust = 0.5))  + theme(legend.title = element_blank())
+      theme(axis.text.x = element_text(angle = 45, hjust = 0.5, vjust = 0.5))  + theme(legend.title = element_blank()) + scale_fill_manual(values = c("red", "blue", "green"))
     if(i == 2 & facet == T){
       p[[i]] = p[[i]] + facet_zoom(ylim = facety)
     }
@@ -58,7 +60,7 @@ plot_mv <-function(table, ylimit  = NA, methods = c("MVMR-IVW",
                  position=position_dodge(.9), show.legend = FALSE) +
       geom_errorbar(aes(ymin=0, ymax=(upper - lower), color = factor(exposure)), 
                     width=.2, position=position_dodge(.9)) +
-      theme_bw() + labs( x= "Threshold", y = "Length", 
+      theme_bw() + labs( x= "p-value Threshold", y = "Length", 
                          title = mmm[i]) + scale_x_discrete(labels= c(1e-8,
                                                                       1e-6,
                                                                       1e-4,
@@ -71,7 +73,8 @@ plot_mv <-function(table, ylimit  = NA, methods = c("MVMR-IVW",
     
   }
   
-  grid.arrange(p[[1]]  , p[[4]]  , p[[2]], p[[5]], p[[3]], p[[6]], nrow = 3)
+  wrap_plots(p[[1]]  , p[[2]],p[[3]],  nrow = 1)   + plot_layout(guides = "collect", axis_titles = "collect") &  theme(legend.position = "bottom")
+
 }
 
 
