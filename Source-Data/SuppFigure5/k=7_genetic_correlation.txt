@@ -1,0 +1,16 @@
+p1_category	p1	p2_category	p2	rg	se	z	p	q
+Metabolic	LDL-C	Anthropometric	BMI-C	0.0164	0.3855	0.0426	0.966	0.9687
+Metabolic	LDL-C	Blood Pressure	SBP-C	-0.858	0.5686	-1.509	0.1313	0.281357142857143
+Metabolic	LDL-C	Metabolic	LDL-A	0.8417	0.255	3.3004	0.001	0.00375
+Metabolic	LDL-C	Anthropometric	BMI-A	0.0854	0.0989	0.8641	0.3875	0.58125
+Metabolic	LDL-C	Blood Pressure	SBP-A	-0.0041	0.104	-0.0392	0.9687	0.9687
+Anthropometric	BMI-C	Blood Pressure	SBP-C	-0.1742	0.3142	-0.5543	0.5793	0.668538461538462
+Anthropometric	BMI-C	Metabolic	LDL-A	0.1783	0.1396	1.2768	0.2017	0.3781875
+Anthropometric	BMI-C	Anthropometric	BMI-A	0.0446	0.0777	0.5744	0.5657	0.668538461538462
+Anthropometric	BMI-C	Blood Pressure	SBP-A	-0.1493	0.0922	-1.6196	0.1053	0.26325
+Blood Pressure	SBP-C	Metabolic	LDL-A	-0.0679	0.1225	-0.5542	0.5794	0.668538461538462
+Blood Pressure	SBP-C	Anthropometric	BMI-A	0.3467	0.0843	4.1101	3.9552E-05	0.000288155
+Blood Pressure	SBP-C	Blood Pressure	SBP-A	0.4051	0.1007	4.0223	5.7631E-05	0.000288155
+Metabolic	LDL-A	Anthropometric	BMI-A	0.0964	0.0493	1.9547	0.0506	0.1518
+Metabolic	LDL-A	Blood Pressure	SBP-A	-0.0274	0.0317	-0.866	0.3865	0.58125
+Anthropometric	BMI-A	Blood Pressure	SBP-A	0.1649	0.0197	8.3816	5.2235E-17	7.83525E-16
