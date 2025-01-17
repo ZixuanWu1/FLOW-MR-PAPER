@@ -3,7 +3,7 @@ library(patchwork)
 library(dplyr)
 library(ggpubr)
 
-df = read.csv("k=7_sim.csv")
+df = read.csv("multivariate_sim.csv")
 
 df$pval = factor((df$pval), levels = c(1e-8, 1e-6, 1e-4, 1e-2))
 K = 6
@@ -54,7 +54,7 @@ for (trait in 1:K){
   y_max <- quantile(df_sub$length, 0.99)  # Upper 95% quantile
   
   lengths[[trait]] =  ggplot(df_sub, aes(x = pval, y = length, fill = Method)) +
-    geom_boxplot(outlier.size = .3,size = .1, position = position_dodge()) +  # Bar plot with dodged bars
+    geom_boxplot(outlier.shape = NA,size = .1, position = position_dodge()) +  # Bar plot with dodged bars
     labs(x = "P-value threshold", y = "Length",  title = paste("Length for Exp", toString(trait), "indirect") ) +
     theme_bw() +    theme(axis.text.x = element_text(angle = 45, hjust = 1))+ coord_cartesian(ylim = c(y_min, y_max)) 
 }
@@ -97,10 +97,19 @@ for (trait in 1:3){
   y_min <- quantile(df_sub$length, 0.01)  # Lower 5% quantile
   y_max <- quantile(df_sub$length, 0.99)  # Upper 95% quantile
   
+  
   lengths_ind[[trait]] =  ggplot(df_sub, aes(x = pval, y = length, fill = Method)) +
-    geom_boxplot(outlier.size = .1, size = .1, position = position_dodge()) +  # Bar plot with dodged bars
+    geom_boxplot(outlier.shape = NA, size = .1, position = position_dodge()) +  # Bar plot with dodged bars
     labs(x = "P-value threshold", y = "Length",  title = paste("Length for Exp", toString(trait), "indirect") ) +
-    theme_bw()+ theme(legend.position = "none")+   theme(axis.text.x = element_text(angle = 45, hjust = 1))+ coord_cartesian(ylim = c(y_min, y_max)) 
+    theme_bw()+ theme(legend.position = "none")+   theme(axis.text.x = element_text(angle = 45, hjust = 1))
+  
+  if(trait == 1){
+    lengths_ind[[trait]] = lengths_ind[[trait]] + ylim(0, 1)
+    } else{
+    lengths_ind[[trait]]  =  lengths_ind[[trait]] + coord_cartesian(ylim = c(y_min, y_max)) 
+    
+  }
+
 }
 
 c1 = wrap_plots(list(
@@ -153,7 +162,7 @@ c2  = wrap_plots(list(lengths[[4]] + ggtitle(expression(X[2*","*1] ~ "→" ~ Y ~
   plot_layout(axis_titles = "collect") + theme(legend.position = "none")
 
 c3 = wrap_plots(list(lengths_ind[[1]]+ ggtitle(expression(X[1*","*1] ~ "→" ~ Y ~ "indirect"))  +  theme(legend.position = "none")+ 
-                       guides(color = "none", fill = "none", linetype = "none") ,
+                       guides(color = "none", fill = "none", linetype = "none") + ylim(NA, .15),
                      lengths_ind[[2]]+ theme(axis.title.y = element_blank()) + ggtitle(expression(X[1*","*2] ~ "→" ~ Y ~ "indirect")) +  theme(legend.position = "none")+ 
                        guides(color = "none", fill = "none", linetype = "none") ,
                      lengths_ind[[3]]+ theme(axis.title.y = element_blank()) + ggtitle(expression(X[1*","*3] ~ "→" ~ Y ~ "indirect")) +  theme(legend.position = "none")+ 

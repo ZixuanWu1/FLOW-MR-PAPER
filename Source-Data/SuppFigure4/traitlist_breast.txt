@@ -1,0 +1,5 @@
+CATEGORY	TRAIT	COLOR
+Anthropometric	1-year-old BMI	#4C72AE
+Anthropometric	8-year-old BMI	#4C72AE
+Anthropometric	Adult BMI	#4C72AE
+Disease	Breast Cancer	#E4812F

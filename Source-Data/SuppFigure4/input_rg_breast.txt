@@ -1,0 +1,7 @@
+p1_category	p1	p2_category	p2	rg	se	z	p	q
+Anthropometric	1-year-old BMI	Anthropometric	8-year-old BMI	0.2608	0.1412	2.5833	1	1
+Anthropometric	1-year-old BMI	Anthropometric	Adult BMI	0.0026	0.0448	4.021	1	1
+Anthropometric	1-year-old BMI	Disease	Breast Cancer	-0.0039	0.0604	-1.0591	1	1
+Anthropometric	8-year-old BMI	Anthropometric	Adult BMI	0.0215	0.0723	5.9053	1	1
+Anthropometric	8-year-old BMI	Disease	Breast Cancer	-0.009	0.0724	-1.292	1	1
+Anthropometric	Adult BMI	Disease	Breast Cancer	5e-04	0.022	-0.9405	1	1
