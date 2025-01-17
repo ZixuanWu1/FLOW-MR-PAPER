@@ -5,7 +5,6 @@ library(ggpubr)
 
 df = read.csv("k=7_sim.csv")
 
-
 df$pval = factor((df$pval), levels = c(1e-8, 1e-6, 1e-4, 1e-2))
 K = 6
 n = 100
@@ -37,8 +36,7 @@ for (trait in 1:K){
     geom_point(position = position_dodge(0.5)) +
     labs(x = "P-value threshold", y = "Coverage",  title = paste("Coverage for Exp", toString(trait), "indirect") ) +
     theme_bw() + geom_abline(slope = 0, intercept = .95,  linetype = "dashed") +    theme(axis.text.x = element_text(angle = 45, hjust = 1))+
-    ylim(NA, 1) +  # Corrected ylim
-    scale_color_manual(values = method_colors) 
+    ylim(NA, 1) 
   
 }
 
@@ -56,10 +54,9 @@ for (trait in 1:K){
   y_max <- quantile(df_sub$length, 0.99)  # Upper 95% quantile
   
   lengths[[trait]] =  ggplot(df_sub, aes(x = pval, y = length, fill = Method)) +
-    geom_boxplot(outlier.shape = NA,size = .1, position = position_dodge()) +  # Bar plot with dodged bars
+    geom_boxplot(outlier.size = .3,size = .1, position = position_dodge()) +  # Bar plot with dodged bars
     labs(x = "P-value threshold", y = "Length",  title = paste("Length for Exp", toString(trait), "indirect") ) +
-    theme_bw() +    theme(axis.text.x = element_text(angle = 45, hjust = 1))+ coord_cartesian(ylim = c(y_min, y_max)) +  # Corrected ylim
-    scale_fill_manual(values = method_colors) 
+    theme_bw() +    theme(axis.text.x = element_text(angle = 45, hjust = 1))+ coord_cartesian(ylim = c(y_min, y_max)) 
 }
 
 covers_ind = list()
@@ -101,7 +98,7 @@ for (trait in 1:3){
   y_max <- quantile(df_sub$length, 0.99)  # Upper 95% quantile
   
   lengths_ind[[trait]] =  ggplot(df_sub, aes(x = pval, y = length, fill = Method)) +
-    geom_boxplot(outlier.shape = NA, size = .1, position = position_dodge()) +  # Bar plot with dodged bars
+    geom_boxplot(outlier.size = .1, size = .1, position = position_dodge()) +  # Bar plot with dodged bars
     labs(x = "P-value threshold", y = "Length",  title = paste("Length for Exp", toString(trait), "indirect") ) +
     theme_bw()+ theme(legend.position = "none")+   theme(axis.text.x = element_text(angle = 45, hjust = 1))+ coord_cartesian(ylim = c(y_min, y_max)) 
 }
