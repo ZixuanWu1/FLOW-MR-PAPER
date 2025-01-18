@@ -1,4 +1,3 @@
-setwd("/home/zixuanwu/mr_mediation/mediation_simulation")
 load("K=4_dat.RData")
 source("sim_functions.R")
 source("make_table.R")
