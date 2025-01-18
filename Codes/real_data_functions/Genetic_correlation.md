@@ -26,7 +26,7 @@ Then one can use ldsc to estimate genetic correlation from GWAS files. Make sure
 6. BETA: A signed summary statistic (beta, OR, log odds, Z-score, etc)
 
 
-Then one can use ```munge``` to convert data into .sumstat format
+Then one can use ```munge``` to convert data into .sumstat format. For example, suppose we are interested in the genetic correlation between childhood body size and adult bmi, then one can run
 
 ```
 python munge_sumstats.py \
@@ -45,7 +45,7 @@ python munge_sumstats.py \
 
 ```
 
-Finally one can use ldsc to compute genetic correlation.
+Finally we can use ldsc to compute genetic correlation.
 
 ```
 python ldsc.py \
