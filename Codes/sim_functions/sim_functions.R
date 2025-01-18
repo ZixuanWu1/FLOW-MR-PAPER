@@ -1,5 +1,5 @@
 library(doParallel)
-library(MrMediation)
+library(FLOWMR)
 source("gibbs_vector.R")
 library(MVMR)
 library(GRAPPLE)
