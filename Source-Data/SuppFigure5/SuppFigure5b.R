@@ -1,4 +1,4 @@
-df = read.csv("sbpc_bmia_sbpa.csv")
+df = read.csv("SuppFigure5/sbpc_bmia_sbpa.csv")
 df$threshold = factor(df$threshold)
 plot_mv_K <- function(table, ylimit  = NA, methods = c("MVMR-IVW",
                                           "GRAPPLE",
@@ -40,3 +40,4 @@ plot_mv_K <- function(table, ylimit  = NA, methods = c("MVMR-IVW",
 }
 
 plot_mv_K(df, methods = c("MVMR-IVW", "GRAPPLE", "FLOW-MR"))
+

@@ -3,7 +3,7 @@ library(patchwork)
 library(dplyr)
 library(ggpubr)
 
-df = read.csv("multivariate_sim.csv")
+df = read.csv("SuppFigure3/multivariate_sim.csv")
 
 df$pval = factor((df$pval), levels = c(1e-8, 1e-6, 1e-4, 1e-2))
 K = 6

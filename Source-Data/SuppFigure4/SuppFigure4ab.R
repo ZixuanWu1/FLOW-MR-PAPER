@@ -3,8 +3,8 @@ library(patchwork)
 library(dplyr)
 library(ggpubr)
 
-df1 = read.csv("k=3_body_size_real.csv")
-df2 = read.csv("k=3_bmi_real.csv")
+df1 = read.csv("SuppFigure4/k=3_body_size_real.csv")
+df2 = read.csv("SuppFigure4/k=3_bmi_real.csv")
  
 df1$pval = factor((df1$pval), levels = c(1e-8, 1e-6, 1e-4, 1e-3))
 df1$Trait = factor((df1$Trait), levels = c(1, 2))
