@@ -2,11 +2,11 @@ library(gridExtra)
 library(ggplot2)
 library(ggforce)
 library(patchwork)
-bodysize3 = read.csv("k=3_real_bodysize.csv")
+bodysize3 = read.csv("MainFigure4/k=3_real_bodysize.csv")
 bodysize3$threshold <- factor(bodysize3$threshold, levels = c(1e-8, 1e-6, 1e-4, 1e-3))
 bodysize3$exposure = factor(bodysize3$exposure, levels = c("early-life Body Size", "Adult BMI"))
 
-bmi3 = read.csv("k=3_real_bmi.csv")
+bmi3 = read.csv("MainFigure4/k=3_real_bmi.csv")
 bmi3$threshold <- factor(bmi3$threshold, levels = c(1e-8, 1e-6, 1e-4, 1e-3))
 
 
