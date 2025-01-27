@@ -1,0 +1,7 @@
+"exposure","outcome","mean","lower","upper","exposure_outcome"
+"Adult BMI","Breast Cancer",0.167791508559767,-0.0474548904893313,0.403380668485835,"Adult BMI -> Breast Cancer"
+"8-year-old BMI","Breast Cancer",-0.410735895586993,-0.746137021525981,-0.091519614789232,"8-year-old BMI -> Breast Cancer"
+"1-year-old BMI","Breast Cancer",-0.0418132675545119,-0.315657207410227,0.290494462984628,"1-year-old BMI -> Breast Cancer"
+"8-year-old BMI","Adult BMI",0.704586791351064,0.522534712748167,0.928514759762802,"8-year-old BMI -> Adult BMI"
+"1-year-old BMI","Adult BMI",0.0217755605375036,-0.280579037981214,0.300239178072419,"1-year-old BMI -> Adult BMI"
+"1-year-old BMI","8-year-old BMI",0.581449541538542,0.236980929516721,0.955487739376415,"1-year-old BMI -> 8-year-old BMI"

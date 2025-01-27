@@ -1,0 +1,3 @@
+"exposure","outcome","mean","lower","upper","exposure_outcome"
+"1-year-old BMI","Adult BMI",0.407791183102601,0.158913708027943,0.711524436547355,"1-year-old BMI -> Adult BMI"
+"1-year-old BMI","Breast Cancer",-0.237886116967279,-0.528692981887791,-0.0422777234262015,"1-year-old BMI -> Breast Cancer"
