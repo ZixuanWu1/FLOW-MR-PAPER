@@ -1,3 +1,6 @@
+library(ggpubr)
+library(ggplot2)
+library(gridExtra)
 df = read.csv("SuppFigure5/sbpc_bmia_sbpa.csv")
 df$threshold = factor(df$threshold)
 plot_mv_K <- function(table, ylimit  = NA, methods = c("MVMR-IVW",

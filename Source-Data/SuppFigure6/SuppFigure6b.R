@@ -1,9 +1,10 @@
-df = read.csv("k=3_sim_cor.csv")
+df = read.csv("SuppFigure6/k=3_sim_cor.csv")
 
 df$pval = factor((df$pval), levels = c(1e-8, 1e-6, 1e-4, 1e-2))
 df$Trait = factor((df$Trait), levels = c(1, 2))
 
-
+K = 2
+n = 100
 # Compute the coverage proportion
 true_val = c(0.3, 1)
 covers = list()

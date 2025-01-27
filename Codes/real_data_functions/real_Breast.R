@@ -1,8 +1,7 @@
-setwd("~/Downloads/research")
 library(extraDistr)
 library(MVMR)
 library(GRAPPLE)
-library(MrMediation)
+library(FLOWMR)
 library(extraDistr)
 
 runMVMR4 <- function(data, 
@@ -44,6 +43,7 @@ runMVMR4 <- function(data,
     
     if(bayes){
       if(K == 4){
+        new_order = 4:1
         Gamma_hat =rbind(dat$gamma_out1, 
                          dat$gamma_exp3,
                          dat$gamma_exp2,
@@ -54,7 +54,7 @@ runMVMR4 <- function(data,
                        dat$se_exp2,
                        dat$se_exp1)
         result1 = BayesMediation(Gamma_hat, Sd_hat, inv = TRUE,
-                                 init = init, iter = iter, warmup  = warmup, cor = cor_mat, Raw = T,
+                                 init = init, iter = iter, warmup  = warmup, cor = cor_mat[new_order, new_order], Raw = T,
                                  indirect = T)
       }
       
@@ -121,6 +121,7 @@ runMVMR3 <- function(data,
     
     if(bayes){
       if(K == 3){
+        new_order = 3:1
         Gamma_hat =rbind(dat$gamma_out1, 
                          dat$gamma_exp2,
                          dat$gamma_exp1)
@@ -129,7 +130,7 @@ runMVMR3 <- function(data,
                        dat$se_exp2,
                        dat$se_exp1)
         result1 = BayesMediation(Gamma_hat, Sd_hat, inv = TRUE,
-                                 init = init, iter = iter, warmup  = warmup, cor = cor_mat, Raw = F,
+                                 init = init, iter = iter, warmup  = warmup, , cor = cor_mat[new_order, new_order], Raw = F,
                                  indirect = T)
       }
       
@@ -168,7 +169,6 @@ mv_breast_bs = runMVMR3(filtered.data, p_value =c(1e-8, 1e-6, 1e-4, 1e-3), iter 
                         warmup = 3000)
 
 
-
 sel.file <- c("bmi_child_agg.csv", "BMI-giant17eu.csv" )
 exp.file <- c("childhood_bmi_nat_comm_2019_8years", "BMI_adult.csv")
 out.file <- "Breast-Micha17erp.csv"
@@ -183,7 +183,6 @@ mv_breast_bmi = runMVMR3(filtered.data, p_value =c(1e-8, 1e-6, 1e-4, 1e-3), iter
 
 
 
-# load("~/Downloads/research/k=3_bmi_noisecor.RData")
 
 
 # K = 4
