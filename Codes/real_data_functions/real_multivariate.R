@@ -70,9 +70,9 @@ runMVMR7 <- function(data,
 
 
 
-sel.file <- c("LDL-gera18.csv", "BMI-giant17eu.csv", "SBP-gera17.csv", "bmi_child_agg.csv")
+sel.file <- c("LDL-gera18.csv", "BMI-giant17eu.csv", "SBP-gera17.csv", "BMIchild-egg15.csv")
 exp.file <- c("ldl_child.csv",  "bmi_child.csv", "sbp_child.csv",
-              "LDL-glgc13.csv",  "BMI_adult.csv", "SBP-ukb.csv")
+              "LDL-glgc13.csv",  "BMIadult-ukb.csv", "SBP-ukb.csv")
 out.file <- "AS-Malik18EU.csv"
 plink_refdat <- "data_maf0.01_rs_ref/data_maf0.01_rs_ref"
 
