@@ -156,8 +156,8 @@ runMVMR3 <- function(data,
 
 
 # K = 3
-sel.file <- c("BMI-giant17eu.csv", "bmi_child_agg.csv" )
-exp.file <- c( "childhood_body_size.csv","BMI_adult.csv" )
+sel.file <- c("BMI-giant17eu.csv", "BMIchild-egg15.csv" )
+exp.file <- c( "BodySizechild-ukb.csv","BMIadult-ukb.csv" )
 out.file <- "Breast-Micha17erp.csv"
 plink_refdat <- "data_maf0.01_rs_ref/data_maf0.01_rs_ref"
 data.list <- GRAPPLE::getInput(sel.file, exp.file, out.file, plink_refdat, max.p.thres =0.01,
@@ -169,8 +169,8 @@ mv_breast_bs = runMVMR3(filtered.data, p_value =c(1e-8, 1e-6, 1e-4, 1e-3), iter 
                         warmup = 3000)
 
 
-sel.file <- c("bmi_child_agg.csv", "BMI-giant17eu.csv" )
-exp.file <- c("childhood_bmi_nat_comm_2019_8years", "BMI_adult.csv")
+sel.file <- c("BMIchild-egg15.csv" , "BMI-giant17eu.csv" )
+exp.file <- c("BMI8year_moba19", "BMIadult-ukb.csv")
 out.file <- "Breast-Micha17erp.csv"
 plink_refdat <- "data_maf0.01_rs_ref/data_maf0.01_rs_ref"
 data.list <- GRAPPLE::getInput(sel.file, exp.file, out.file, plink_refdat, max.p.thres =0.01,
@@ -187,8 +187,8 @@ mv_breast_bmi = runMVMR3(filtered.data, p_value =c(1e-8, 1e-6, 1e-4, 1e-3), iter
 
 # K = 4
 
-sel.file <- c("bmi_child_agg.csv", "BMI-giant17eu.csv" )
-exp.file <- c("childhood_bmi_nat_comm_2019_1year", "childhood_bmi_nat_comm_2019_8years", "BMI_adult.csv")
+sel.file <- c("BMIchild-egg15.csv" , "BMI-giant17eu.csv" )
+exp.file <- c("BMI1year_moba19", "BMI8year_moba19", "BMIadult-ukb.csv")
 out.file <- "Breast-Micha17erp.csv"
 plink_refdat <- "data_maf0.01_rs_ref/data_maf0.01_rs_ref"
 data.list <- GRAPPLE::getInput(sel.file, exp.file, out.file, plink_refdat, max.p.thres =0.01,
