@@ -1,0 +1,6 @@
+"","exposure","outcome","threshold","beta_hat","lower","upper","type","quantity"
+"7","1-year-old BMI","Adult BMI","0.001",-0.0725017503778066,-0.472669971305086,0.282410067291145,"direct","1-year-old BMI -> Adult BMI (direct)"
+"8","8-year-old BMI","Adult BMI","0.001",0.606828647054553,0.478594727434165,0.751757465989246,"direct","8-year-old BMI -> Adult BMI (direct)"
+"12","1-year-old BMI","8-year-old BMI","0.001",0.804444650463778,0.250559459391211,1.428366791765,"direct","1-year-old BMI -> 8-year-old BMI (direct)"
+"16","1-year-old BMI","Adult BMI","0.001",0.491821288374333,0.142028091822422,0.940579291786166,"indirect","1-year-old BMI -> Adult BMI (indirect)"
+"20","1-year-old BMI","Adult BMI","0.001",0.419319537996526,0.219268319701001,0.648647498693576,"total","1-year-old BMI -> Adult BMI (total)"

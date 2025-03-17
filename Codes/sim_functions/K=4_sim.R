@@ -4,7 +4,7 @@ source("make_table.R")
 
 
 # sel.file <- c("BMIchild-egg15.csv", "BMI-giant17eu-F.csv" )
-# exp.file <- c("BMI1year_moba19", "BMI8year_moba19", "BMIadult-ukb.csv")
+# exp.file <- c("BMI1year-moba19", "BMI8year-moba19", "BMIadult-ukb.csv")
 # out.file <- "T2D-diagram12-M.csv"
 # plink_refdat <- "data_maf0.01_rs_ref/data_maf0.01_rs_ref"
 # 

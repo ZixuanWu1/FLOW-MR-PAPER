@@ -114,5 +114,5 @@ plink_refdat <- "data_maf0.01_rs_ref/data_maf0.01_rs_ref"
 data.list <- GRAPPLE::getInput(sel.file, exp.file, out.file, plink_refdat, max.p.thres =0.01,
                                plink_exe = "plink_mac_20210606/plink", cal.cor = T)
 filtered.data <-data.list$data;
-mv_breast_bmi = runMVMR3(filtered.data, p_value =c(1e-8, 1e-6, 1e-4, 1e-3), iter = 16000,
+mv_sbp_bmi = runMVMR3(filtered.data, p_value =c(1e-8, 1e-6, 1e-4, 1e-3), iter = 16000,
                          warmup = 8000, cor_mat = data.list$cor.mat, alpha0 = 5, alpha1= 5)
